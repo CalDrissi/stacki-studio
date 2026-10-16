@@ -1,0 +1,38 @@
+# build output
+dist/
+
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment variables
+.env
+.env.*
+!.env.example
+.dev.vars*
+.wrangler/
+.studio/
+.studio-state/
+test-results/
+*.pem
+*.key
+
+# Personal deployment configurations
+studio/cloudflare/*.local.jsonc
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/
+
+# local agent settings
+.claude/settings.local.json

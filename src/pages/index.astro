@@ -1,0 +1,104 @@
+---
+import Grid from "../components/wrapper/Grid.astro";
+import Card from "../components/item/Card.astro";
+import Slider from "../components/interactive/Slider.astro";
+import studioAsset from "../assets/graphics/lumos-background.svg";
+import Button from "../components/Button.astro";
+import ButtonWrapper from "../components/wrapper/ButtonWrapper.astro";
+import Paragraph from "../components/typography/Paragraph.astro";
+import Layout from "@/layouts/BaseLayout.astro";
+import Section from "@/components/wrapper/Section.astro";
+import Heading from "@/components/typography/Heading.astro";
+import Eyebrow from "@/components/typography/Eyebrow.astro";
+import ContentWrapper from "@/components/wrapper/ContentWrapper.astro";
+---
+
+<Layout theme="dark">
+  <Section>
+    <ContentWrapper variant="columns">
+      <Eyebrow variant="tag">New content</Eyebrow>
+      <Heading variant="display">Heading goes here</Heading>
+      <Paragraph>Really long paragraph content goes here</Paragraph>
+      <Paragraph>Some text goes here</Paragraph>
+      <ButtonWrapper
+        ><Button>Get started</Button>
+        <Button variant="link">Get started</Button>
+      </ButtonWrapper>
+    </ContentWrapper>
+    <Slider small={1.4}
+      ><Card
+        image={studioAsset}
+        variant="cover"
+        eyebrow="Eyebrow"
+        text="Some text"
+        heading="Heading"
+      />
+      <Card
+        image={studioAsset}
+        variant="cover"
+        eyebrow="Eyebrow"
+        text="Some text"
+        heading="Heading"
+      />
+      <Card
+        image={studioAsset}
+        variant="cover"
+        eyebrow="Eyebrow"
+        text="Some text"
+        heading="Heading"
+      />
+    </Slider>
+  </Section>
+
+  <Section>
+    <ContentWrapper variant="columns"
+      ><Heading>Heading goes here</Heading>
+      <Paragraph>Really long paragraph content goes here</Paragraph>
+      <ButtonWrapper
+        ><Button>Get started</Button>
+        <Button emphasis="secondary">Get started</Button>
+      </ButtonWrapper>
+    </ContentWrapper>
+
+    <Grid medium={3} small={2}
+      ><Card
+        image={studioAsset}
+        variant="cover"
+        eyebrow="Eyebrow"
+        text="Some text"
+        heading="Heading"
+      />
+      <Card
+        image={studioAsset}
+        variant="cover"
+        eyebrow="Eyebrow"
+        text="Some text"
+        heading="Heading"
+      />
+      <Card
+        image={studioAsset}
+        variant="cover"
+        eyebrow="Eyebrow"
+        text="Some text"
+        heading="Heading"
+      />
+      <Card
+        image={studioAsset}
+        variant="cover"
+        eyebrow="Eyebrow"
+        text="Some text"
+        heading="Heading"
+      />
+      <Card
+        image={studioAsset}
+        variant="cover"
+        eyebrow="Eyebrow"
+        text="Some text"
+        heading="Heading"
+      />
+    </Grid>
+  </Section>
+  <Section
+    ><ContentWrapper><Heading>New content </Heading> </ContentWrapper>
+  </Section>
+</Layout>
