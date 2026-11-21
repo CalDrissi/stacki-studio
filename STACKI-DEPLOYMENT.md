@@ -17,6 +17,22 @@ Local (git-ignored) configs: `studio/cloudflare/wrangler.local.jsonc` and
 `studio/cloudflare/site.wrangler.local.jsonc` — copies of the tracked examples
 with the values above.
 
+## Current state (2026-11-21)
+
+- Both Workers are LIVE on the custom domains; `/studio` serves the real
+  sign-in screen and `/__studio-deployment` reports the deployed revision.
+- **Degraded mode:** the Cloudflare account is on Workers **Free**, which
+  rejects `limits.cpu_ms` (error 100328) and Cloudflare **Containers**
+  (`/containers/me` unauthorized). The editor Worker is therefore deployed from
+  `studio/cloudflare/wrangler.local-nocontainer.jsonc` — identical, minus the
+  container attachment. Sign-in/auth is fully functional once the GitHub App
+  exists, but opening the draft workspace (preview container) requires
+  **Workers Paid (~$5/mo) + Containers**: upgrade the plan, restore the
+  `limits` lines, then `npx wrangler deploy --config cloudflare/wrangler.local.jsonc`
+  (the container image already builds cleanly with local Docker).
+- Secrets `SESSION_SECRET` + `CONTAINER_TOKEN` are set. GitHub App secrets
+  pending the owner step below.
+
 ## Deploy commands
 
 ```sh
